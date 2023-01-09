@@ -1,0 +1,207 @@
+:root {
+  --primary: #e99401;
+  --black: #262626;
+  --white: #fff;
+  --fuente-principal: "Outfit", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 2rem;
+  font-family: var(--fuente-principal);
+  line-height: 1.5;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+[class*="contenedor"],
+main {
+  width: min(95%, 120rem);
+  margin: 3rem auto;
+}
+[class*="heading"] {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  color: var(--primary);
+  margin: 5rem 0;
+}
+
+.scollButtons {
+  display: flex;
+  position: fixed !important;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+  outline: none !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(-47deg);
+  background-color: rgb(0 0 0 / 0.4);
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.scollButtons img {
+  max-width: 75%;
+}
+
+.error {
+  font-size: 5rem;
+  text-align: center;
+  font-weight: 900;
+  background-color: var(--white);
+  padding: 15rem;
+  border-radius: 1rem;
+  color: var(--primary);
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  margin: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .error {
+    padding: 5rem 0;
+  }
+}
+
+.errorFormulario {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: red;
+  color: var(--white);
+  text-align: center;
+  border-radius: 1rem;
+  padding: 0.3rem;
+}
+
+.enlace {
+  margin: 3rem 0;
+  display: block;
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 900;
+  border-radius: 1rem;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.enlace:hover {
+  background-color: var(--primary);
+}
+
+.contendor-styles {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+  border-radius: 1rem;
+  background-color: var(--white);
+  padding: 2rem;
+}
+.preWrap {
+  white-space: pre-wrap;
+}
+
+/* SPINNER */
+
+.spinner {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0 0 0 / 0.6);
+  z-index: 5;
+}
+
+.loader {
+  width: 150px;
+  height: 150px;
+}
+svg {
+  width: 90%;
+  fill: none;
+}
+.load {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 570;
+  stroke-width: 20px;
+}
+.load.one {
+  stroke: #e99401;
+  animation: load 1.5s infinite;
+}
+.load.two {
+  stroke: #e99401;
+  animation: load 1.5s infinite;
+  animation-delay: 0.1s;
+}
+.load.three {
+  stroke: #e99401;
+  animation: load 1.5s infinite;
+  animation-delay: 0.2s;
+}
+.point {
+  animation: bounce 1s infinite ease-in-out;
+}
+.point.one {
+  fill: #e99401;
+  animation-delay: 0s;
+}
+.point.two {
+  fill: #e99401;
+  animation-delay: 0.1s;
+}
+.point.three {
+  fill: #e99401;
+  animation-delay: 0.2s;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes load {
+  0% {
+    stroke-dashoffset: 570;
+  }
+  50% {
+    stroke-dashoffset: 530;
+  }
+  100% {
+    stroke-dashoffset: 570;
+    transform: rotate(360deg);
+  }
+}

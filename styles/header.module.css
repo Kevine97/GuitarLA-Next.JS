@@ -1,0 +1,248 @@
+.header {
+  background-image: linear-gradient(
+      to right,
+      rgb(0 0 0 / 0.8),
+      rgb(0 0 0 / 0.7)
+    ),
+    url(../public/img/header.jpg);
+  padding: 5rem 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.barra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header .navegacion {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+  align-items: center;
+  z-index: 1;
+}
+
+.header .navegacion a {
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.4rem;
+  padding: 1.4rem;
+  transition-property: background-color;
+  transition-duration: 300ms;
+}
+
+.header .navegacion a:hover,
+.header .active {
+  background-color: var(--primary);
+}
+
+.header .navegacion .carritoNavegacion:hover {
+  background-color: transparent;
+}
+
+.header .navegacion .carritoNavegacion {
+  position: relative;
+}
+
+.cantidadCariito {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  top: 0;
+  left: 3.5rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.header .activeBurguer {
+  left: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .barra {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header .navegacion {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .navegacion {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 130vh;
+    background-color: #000000de;
+    top: 0rem;
+    left: -100%;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 2;
+    justify-content: center;
+    margin: 0;
+    gap: 5rem;
+  }
+  .barra {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .barra a,
+  .barra .icon {
+    z-index: 4;
+  }
+}
+
+.logo {
+  max-width: 25rem;
+}
+
+.gridHeader {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  align-items: center;
+  justify-items: end;
+}
+
+.infoGuitarra {
+  padding: 0 6rem;
+  z-index: 1;
+}
+
+.infoGuitarra h2 {
+  color: var(--white);
+  font-weight: 900;
+  font-size: 8rem;
+}
+
+.infoGuitarra h2 span {
+  color: var(--primary);
+}
+
+.infoGuitarra p {
+  color: var(--white);
+}
+
+.infoGuitarra .descripcionHeader {
+  font-size: 2.5rem;
+}
+
+.infoGuitarra .precioHeader {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.btnOutline {
+  border: 1px solid var(--primary);
+  background-color: transparent;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 2rem;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 1rem;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.btnOutline:hover {
+  background-color: var(--primary);
+}
+
+.infoImg {
+  display: flex;
+  position: absolute;
+  top: 1rem;
+  right: 0rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.maxWidth {
+  padding-bottom: 15rem;
+}
+
+@media (max-width: 768px) {
+  .infoImg {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-img {
+    display: none;
+  }
+
+  .header .navegacion {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 130vh;
+    background-color: #000000de;
+    top: 0rem;
+    left: -100%;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 2;
+    justify-content: center;
+    margin: 0;
+    gap: 5rem;
+  }
+  .barra {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .barra a {
+    z-index: 4;
+  }
+  .barra .icon {
+    z-index: 4;
+  }
+  .header .active-burguer {
+    left: 0;
+  }
+}
+@media (max-width: 769px) {
+  .gridHeader {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .infoGuitarra {
+    padding: 1rem;
+  }
+  .infoGuitarra h2 {
+    text-align-last: start;
+  }
+}
+
+@media (max-width: 425px) {
+  .infoGuitarra h2 {
+    text-align-last: end;
+  }
+}
+
+@media (max-width: 375px) {
+  .header .infoGuitarra h2 {
+    color: var(--white);
+    font-weight: 900;
+    font-size: 6rem;
+  }
+  .btnOutline{
+    font-size: 1.5rem;
+  }
+}
